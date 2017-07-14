@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>图片管理</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="__PUBLIC__/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="panel panel-default">
+<div class="panel-heading">
+	<a href="{:url('img/imgadd')}">新增</a>
+</div>
+	<table>
+		<tr><td>序号</td><td>标题</td><td>图片地址</td><td>操作</td></tr>
+		{volist name="imgs" id="img"}
+		<tr style="color:#333333;background-color:#F7F6F3;">
+		<td>{$img.Id}</td><td>{$img.Title}</td><td>{$img.Url}</td><td><a href="{:url('img/imgupdate',array('id'=>$img['Id']))}">编辑</a><a href="{:url('img/imgdel',array('id'=>$img['Id']))}">删除</a></td></tr>
+		{/volist}
+	</table>
+	 <table>
+<tr class="content">
+        <td colspan="4" bgcolor="#FFFFFF"><div class="pages">
+            {$imgs->render()}
+        </div></td> 
+      </tr>
+</body>
+</html>

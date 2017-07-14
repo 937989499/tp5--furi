@@ -1,0 +1,37 @@
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>账户管理</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="__PUBLIC__/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<a href="{:url('admin/adminadd')}">新增</a>
+	</div>
+	<table class="table table-bordered">
+	<tr><td>序号</td><td>账号</td><td>姓名</td><td>电话</td><td>操作</td></tr>
+	{volist name="adminlist" id="admin"}
+		<td>{$admin.Id}</td><td>{$admin.AdminId}</td><td>{$admin.UserName}</td><td>{$admin.Phone}</td><td><a href="{:url('Admin/adminupdate',array('id'=>$admin['Id']))}">编辑</a><a href="{:url('Admin/admindel',array('id'=>$admin['Id']))}" target="_blank">删除</a></td></tr>
+		{/volist}
+    </table>
+    <table>
+	<tr class="content">
+        <td colspan="5" bgcolor="#FFFFFF"><div class="pages">
+            {$adminlist->render()}
+        </div></td> 
+      </tr>
+	</table>
+</div>
+
+</body>
+</html>

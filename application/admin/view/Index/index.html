@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>后台管理界面</title>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="__PUBLIC__/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head> 
+
+<body class="container">
+	<div class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header navbar-left">
+				<h2>孚日后台管理系统</h2>
+			</div>
+			<div class="navbar-header navbar-right">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="">
+						<a href="{:url('Admin/userLogout')}"><h4>退出</h4></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<ul class="nav nav-pills nav-stacked" role="group" aria-label="Vertical button group" style="float:left;width:20%;border-right:1px solid #e5e5e5;height:600px;">
+		<li role="presentation" class="active"><a href="javascript:void(0);" _href="{:url('Admin/index')}" style="text-decoration:none;" class="menu" >&nbsp;&nbsp;账户管理</a></li>
+		<li role="presentation" class="active"><a href="javascript:void(0);" _href="{:url('Img/index')}"  style="text-decoration:none;" class="menu">&nbsp;&nbsp;图片管理</a></li>
+		<li role="presentation" class="active" class="btn btn-default"><a href="javascript:void(0);" _href="{:url('Cate/index')}"  style="text-decoration:none;" class="menu">&nbsp;&nbsp;分类管理</a></li>
+		<li role="presentation" class="active" class="btn btn-default"><a href="javascript:void(0);" _href="{:url('Article/index')}" style="text-decoration:none;"  class="menu">&nbsp;&nbsp;文章管理</a></li>
+		<!-- <div class="btn btn-default"><a href="javascript:void(0);" _href="{:url('Sys/index')}"  style="text-decoration:none;display:none;" class="menu">&nbsp;&nbsp;系统管理</a></div> -->
+	</ul>
+	<iframe src="right.html" id="rightr" style="width:79%;float:left;border:0px;height:1000px;" scrolling="no"></iframe>
+<script>
+$(document).ready(function(){
+	$(".menu").click(function(){
+		var jumpurl = $(this).attr("_href");
+		$("#rightr").attr("src",jumpurl);
+	});
+});
+</script>
+</body>
+</html>

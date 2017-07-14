@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>文章管理</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/editshow.css">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="__PUBLIC__/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="panel panel-default">
+<div class="panel-heading">
+	<a class="panel-title" href="{:url('Article/index')}">列表</a>
+</div>
+<div class="panel-body">
+	<form action="" method="post" class="form-horizontal" >
+		<div class="form-group">
+			<input type="hidden" class="form-control"  value="{$articles.Id}" name="aid" />
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label ">文章标题</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" placeholder="文章标题" name="wztitle" value="{$articles.Title}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label ">文章内容</label>
+			<div class="col-sm-5">
+				<textarea rows="3" cols="20"  class="form-control"   name="wzcontants" value=""/>{$articles.Contents}</textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label ">图片地址</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control"  name="wzurl"  value="{$articles.ImgUrl}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label ">作者</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" placeholder="作者" name="wzauthor" value="{$articles.Author}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label ">增加时间</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control"  name="wzaddtime" value="{$articles.AddDateTime}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label ">更新时间</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control"  name="wzuptime" value="{$articles.UpdateDateTime}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label ">类别</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control"  name="wzcate" value="{$articles.CateId}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">保存</button>
+			</div>
+		</div>
+		
+	</form>
+</div>
+</div>
+</body>
+</html>
